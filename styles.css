@@ -1,0 +1,258 @@
+/* Josh Comeau’s custom CSS reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+/*9. Create a root stacking context*/
+#root,
+#__next {
+  isolation: isolate;
+}
+/* General */
+@font-face {
+  font-family: sunday-midnight;
+  src: url(/fonts/Sunday\ Midnight\ Personal\ Use.otf);
+}
+html {
+  font-size: 18px;
+}
+body {
+  font-family: system-ui, sans-serif;
+  min-width: 360px;
+}
+p {
+  line-height: calc(1ex / 0.32);
+  max-inline-size: 60ch;
+}
+.background-img {
+  background: no-repeat center url(/img/background.jpg);
+  background-size: cover;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: 100%;
+}
+/* Logo */
+.logo-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.logo {
+  top: -10px;
+  position: relative;
+  width: max(80px, 5vw);
+}
+.logo-box > h1 {
+  text-align: center;
+  color: white;
+  font-family: sunday-midnight, sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.1rem);
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+}
+/* Form */
+.hero {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  margin-top: 100px;
+  padding: 4em 1em;
+}
+.container {
+  max-width: 1000px;
+  display: flex;
+  align-items: stretch;
+  margin: auto;
+}
+.form-div {
+  background-color: rgba(54, 116, 181, 0.6);
+  padding: 2rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  width: clamp(300px, 75%, 600px);
+  margin: 0 4em;
+  box-shadow: 0px 0px 12px 2px rgba(255, 124, 1, 0.6);
+}
+.form-div h2 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.form-div label {
+  display: block;
+  font-size: 0.95rem;
+  margin-top: 0.2em;
+}
+.form-div input {
+  background-color: #ffffff;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+  width: 100%;
+  padding: 0.6em;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.form-div button {
+  background-color: rgb(190, 124, 2);
+  color: white;
+  display: block;
+  margin: 0 auto;
+  padding: 0.4em 1.4em;
+  font-size: 1.1rem;
+  margin-top: 1em;
+  box-shadow: none;
+  border: 2px solid transparent;
+  border-radius: 3px;
+}
+.form-div button:hover {
+  background-color: rgb(194, 138, 34);
+}
+.form-div button:active {
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+.form-div p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 0.8em;
+}
+a {
+  text-decoration: underline;
+  color: #ffffff;
+}
+input:invalid:not(:focus):not(:placeholder-shown) {
+  animation: fadeInInvalid 0.5s forwards;
+}
+#first-name:invalid:not(:focus):not(:placeholder-shown) + span::after,
+#last-name:invalid:not(:focus):not(:placeholder-shown) + span::after {
+  animation: fadeInText 0.5s forwards;
+  content: "❌ Name should not contain numbers or symbols. Please check your entry";
+}
+#email:not(:placeholder-shown):not(:focus):invalid + span:after {
+  animation: fadeInText 0.5s forwards;
+  content: "❌ Invalid e-mail. Please check your entry";
+}
+#password:not(:placeholder-shown):not(:focus):invalid + span:after {
+  animation: fadeInText 0.5s forwards;
+  content: "❌ Password should contain at least one uppercase letter, lowercase letter and number";
+}
+#phone:not(:placeholder-shown):not(:focus):invalid + span:after {
+  animation: fadeInText 0.5s forwards;
+  content: "❌ Phone must be in the format (12) 34567-8901";
+}
+input:valid:not(:focus):not(:placeholder-shown) {
+  animation: fadeInValid 0.5s forwards;
+}
+input:focus {
+  outline: none;
+  background-color: rgb(176, 214, 250);
+}
+.links-div {
+  padding: 0 2rem;
+  font-size: 0.8rem;
+  align-self: stretch;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.links-div h3 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+@keyframes fadeInValid {
+  from {
+    border: 3px solid transparent;
+  }
+  to {
+    border: 3px solid green;
+  }
+}
+@keyframes fadeInInvalid {
+  from {
+    border: 3px solid transparent;
+  }
+  to {
+    border: 3px solid red;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .form-div,
+  .links-div {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  .links-div {
+    margin-top: 1.2em;
+  }
+}

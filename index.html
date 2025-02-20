@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Form</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="background-img">
+      <header class="logo-box">
+        <img src="img/sun-svgrepo-com.svg" class="logo" />
+        <h1>Sunbliss</h1>
+      </header>
+      <main class="hero">
+        <div class="container">
+          <section class="form-div">
+            <h2>Lets do this!</h2>
+            <form action="https://httpbin.org/post" method="post">
+              <label for="first-name"> First name * </label>
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="First name"
+                pattern="^[a-zA-Z' \-]*$"
+                required
+                autocomplete
+              />
+              <span></span>
+              <label for="last-name"> Last name * </label>
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Last Name"
+                pattern="^[a-zA-Z' \-]*$"
+                required
+                autocomplete
+              />
+              <span></span>
+              <label for="email"> E-mail * </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="E-mail address"
+                required
+              />
+              <span></span>
+              <label for="phone"> Phone * </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(XX) XXXXX-XXXX"
+                pattern="^\(?\d{0,2}\)?([ \-]?\d{4,5})([ \-]?\d{4})$"
+                required
+              />
+              <span></span>
+              <label for="password"> Password * </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+                pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$"
+              />
+              <span></span>
+              <label for="confirm-password"> Confirm password * </label>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                placeholder="Confirm password"
+                required
+              />
+              <span></span>
+              <button type="submit">Create account</button>
+            </form>
+            <p>Already have an account? <a href="">Log in</a></p>
+          </section>
+          <section class="links-div">
+            <article>
+              <h3>
+                This is not a real service. <br />
+                The best pasta is the one which has the best sauce. <br />
+                <br />
+                Sign up <em>now</em> to get started!
+              </h3>
+              <br />
+            </article>
+            <article>
+              <p>
+                Foto de
+                <a
+                  href="https://unsplash.com/pt-br/@mvdheuvel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                  >Maarten van den Heuvel</a
+                >
+                na
+                <a
+                  href="https://unsplash.com/pt-br/fotografias/palm-tree-near-seashore-Siuwr3uCir0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                  >Unsplash</a
+                >
+              </p>
+              <p>
+                Vectors and icons by
+                <a
+                  href="https://www.pixelbazaar.com/goodie/responsive-icons?ref=svgrepo.com"
+                  target="_blank"
+                  >Pixelbazaar</a
+                >
+                in CC Attribution License via
+                <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>
+              </p>
+              <p>
+                Font "Sunday Midnight" by author Subectype & Orenari at
+                <a
+                  href="https://www.dafont.com/pt/sunday-midnight.font?text=Sunbliss&back=new"
+                  >Dafont</a
+                >
+              </p>
+            </article>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
