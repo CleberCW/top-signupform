@@ -61,7 +61,7 @@ h6 {
 /* General */
 @font-face {
   font-family: sunday-midnight;
-  src: url(/fonts/Sunday\ Midnight\ Personal\ Use.otf);
+  src: url(fonts/sundayMidnight.otf);
 }
 html {
   font-size: 18px;
@@ -75,7 +75,7 @@ p {
   max-inline-size: 60ch;
 }
 .background-img {
-  background: no-repeat center url(/img/background.jpg);
+  background: no-repeat center url(img/background.jpg);
   background-size: cover;
   width: 100%;
   padding-top: 100px;
